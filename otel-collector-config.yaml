@@ -1,0 +1,25 @@
+receivers:
+  postgresql:
+    endpoint: "host.docker.internal:5432"
+    username: postgres
+    password: "0123456789"      
+    databases: [postgres]
+
+  sqlquery:
+    driver: "postgres"
+    data_source_name: "host=host.docker.internal port=5432 user=postgres password=0123456789 dbname=postgres sslmode=disable"
+    queries:
+      - name: "user_count"
+        value_column: "count"
+        value_type: "int64"
+        query: "SELECT COUNT(*) as count FROM pg_user;"   # example query
+
+exporters:
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    metrics:
+      receivers: [postgresql, sqlquery]
+      exporters: [debug]
