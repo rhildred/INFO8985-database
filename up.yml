@@ -8,7 +8,7 @@
         files:
         - docker-compose.yml
         state: present
-    - import_tasks: lcbo/up.yml
+    - import_tasks: lcbo/tasks.yml
       vars:
         db_user: lcbo
         db_name: lcbo

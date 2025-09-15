@@ -1,6 +1,7 @@
 lcbo database with signoz demo
 
 ```bash
+git submodule update --init --recursive
 ansible-playbook up.yml
 ```
 
