@@ -1,3 +1,6 @@
 [submodule "signoz"]
 	path = signoz
 	url = https://github.com/conestogac-acsit/cdevops-signoz.git
+[submodule "lcbo"]
+	path = lcbo
+	url = https://github.com/conestogac-acsit/cdevops-postgres.git
