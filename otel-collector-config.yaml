@@ -1,0 +1,17 @@
+receivers:
+  postgresql:
+    endpoint: host.docker.internal:5432
+    username: postgres
+    password: "0123456789"
+    databases: ["postgres"]
+    tls:
+      insecure: true
+
+exporters:
+  debug:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [postgresql]
+      exporters: [debug]
